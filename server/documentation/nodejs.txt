@@ -1,0 +1,10 @@
+Project Setup
+
+1. init npm // to initialize the node package
+2. npm i express cors mssql nodemon // nodemon is to auto start the server
+3. Setup a start up file (index.js)
+
+
+Command to Store Environment variable
+
+export/set PORT=5000 // export in mac and set in windows
