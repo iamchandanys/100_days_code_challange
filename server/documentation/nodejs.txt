@@ -1,9 +1,8 @@
 Project Setup
 
 1. init npm // to initialize the node package
-2. npm i express cors mssql nodemon // nodemon is to auto start the server
+2. npm i express cors mssql nodemon joi // nodemon is to auto start the server, joi is for validation
 3. Setup a start up file (index.js)
-
 
 Command to Store Environment variable
 

@@ -111,3 +111,43 @@ contract Constants {
     string public constant WITH_CONSTANT = "Any_Text";
     string public WITHOUT_CONSTANT = "Any_Text";
 }
+
+// Solidity - Arrays
+
+contract Arrays {
+    // an array of integer.
+    uint256[] public uintArray = [1, 2, 3];
+    // an array of string.
+    string[] public strArray = ["Air", "Water", "Soil"];
+    // 2 dimentional array of string.
+    string[][] public strArray2D = [["A", "B"], ["M", "N"]];
+
+
+    // add element to an array.
+    function add(string memory _myString) public {
+        strArray.push(_myString); // adds element at the end of an array
+    }
+
+    // remove element from an array.
+    function remove() public {
+        strArray.pop(); // removes last element from an array.
+    }
+
+    // reset element in an array.
+    function reset(uint _index) public {
+        // the length of the array is not affected by deletion.
+        // it resets the value at the index to its default value, which is 0, in this case.
+        delete strArray[_index];
+    }
+
+    // get length of an array.
+    function getLength() public view returns(uint256){
+        return strArray.length;
+    }
+
+    // to create instance of an array of integer.
+    function createInstance() public pure returns(uint256[] memory){
+        uint256[] memory a = new uint256[](5); // only fixed size can be created.
+        return a;
+    }
+}
