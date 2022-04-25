@@ -1,0 +1,43 @@
+- Install "Simple React Snippets" extension.
+
+sudo npm i -g create-react-app
+    To install React framework globally.
+
+create-react-app app_name
+    To create new javascript React project.
+
+create-react-app app_name --template typescript
+    To create new typescript React project.
+
+npm start
+    Starts the development server.
+
+npm run build
+    Bundles the app into static files for production.
+
+npm test
+    Starts the test runner.
+
+npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+Q&A
+
+What is State variable?
+The state is an instance of React Component Class can be defined as an object of a set of observable properties that control the behavior of the component.
+In other words, the State of a component is an object that holds some information that may change over the lifetime of the component.
+
+Difference between props and state in react?
+The key difference between props and state is that state is internal and controlled by the component itself while props are external and controlled by whatever renders the component.
+Note: props fields are readonly.
+
+Why we need setState()?
+In React, the changes won't be automatically updated/reflected as like in Angular. Hence we need setState().
+When you call setState(), React merges the object you provide into the current state.
+Whenever setState() is called, it will call the render() each and everytime **
+
+React Life Cycle Hooks?
+1. MOUNT - Constructor(1) -> Render(2) -> ComponentDidMount(3)
+2. UPDATE - Render(1) -> ComponentDidUpdate(2)
+3. UNMOUNT - ComponentWillMount(1)
