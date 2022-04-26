@@ -22,6 +22,16 @@ npm run eject
     Removes this tool and copies build dependencies, configuration files
     and scripts into the app directory. If you do this, you can’t go back!
 
+npm i react-router-dom
+    To install router library.
+
+npm i query-string@6.1.0
+    To extract query params.
+
+npm i joi-browser
+    To install joi for browser
+
+
 Q&A
 
 What is State variable?
@@ -41,3 +51,8 @@ React Life Cycle Hooks?
 1. MOUNT - Constructor(1) -> Render(2) -> ComponentDidMount(3)
 2. UPDATE - Render(1) -> ComponentDidUpdate(2)
 3. UNMOUNT - ComponentWillMount(1)
+
+
+Important Notes:
+
+1. import { BrowserRouter } from "react-router-dom"; // Classes should be imported inside curly braces

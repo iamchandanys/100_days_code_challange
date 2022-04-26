@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { getMovies, deleteMovie } from "../../services/fakeMovieService";
-import { getGenres } from "../../services/fakeGenreService";
-import Pagination from "./common/pagination";
-import Filter from "./common/filter";
-import { paginate } from "../../utils/paginate";
+import { getMovies, deleteMovie } from "../../../services/fakeMovieService";
+import { getGenres } from "../../../services/fakeGenreService";
+import Pagination from "../common/pagination";
+import Filter from "../common/filter";
+import { paginate } from "../../../utils/paginate";
 import { any } from "joi";
+import { Link } from "react-router-dom";
 
 class Vidly extends Component {
   state = {
@@ -78,7 +79,9 @@ class Vidly extends Component {
               <tbody>
                 {pag_movies.map((movie) => (
                   <tr key={movie._id}>
-                    <td>{movie.title}</td>
+                    <td>
+                      <Link to={`/movies/${movie._id}`}>{movie.title}</Link>
+                    </td>
                     <td>{movie.genre.name}</td>
                     <td>{movie.numberInStock}</td>
                     <td>{movie.dailyRentalRate}</td>
