@@ -29,7 +29,10 @@ npm i query-string@6.1.0
     To extract query params.
 
 npm i joi-browser
-    To install joi for browser
+    To install form validation framework
+
+npm i axios
+    To install API call framework
 
 
 Q&A

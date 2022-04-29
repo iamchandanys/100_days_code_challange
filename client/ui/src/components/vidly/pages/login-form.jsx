@@ -28,11 +28,11 @@ class LoginForm extends Component {
     return errors;
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const errors = this.validate();
-    this.setState({ errors });
-    if (errors) return;
+  validateProperty = ({ name, value }) => {
+    const obj = { [name]: value };
+    const schema = { [name]: this.schema[name] };
+    const { error } = Joi.validate(obj, schema);
+    return error ? error.details[0].message : null;
   };
 
   handleChange = (e) => {
@@ -41,15 +41,22 @@ class LoginForm extends Component {
     this.setState({ account: account });
   };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = this.validate();
+    this.setState({ errors });
+    if (errors) return;
+  };
+
   render() {
-    const { account } = this.state;
+    const { account, errors } = this.state;
 
     return (
       <div className="container" style={{ marginTop: 20 }}>
         <form onSubmit={(evt) => this.handleSubmit(evt)}>
-          <Input inputType={"email"} name="userName" label="Email address" placeHolder="Enter Email" InputValue={account.userName} handleInputChange={(evt) => this.handleChange(evt)} />
+          <Input inputType={"email"} name="userName" label="Email address" placeHolder="Enter Email" InputValue={account.userName} error={errors.userName} handleInputChange={(evt) => this.handleChange(evt)} />
           <br />
-          <Input inputType={"password"} name="password" label="Email password" placeHolder="Enter Password" InputValue={account.password} handleInputChange={(evt) => this.handleChange(evt)} />
+          <Input inputType={"password"} name="password" label="Email password" placeHolder="Enter Password" InputValue={account.password} error={errors.password} handleInputChange={(evt) => this.handleChange(evt)} />
           <br />
           <button type="submit" className="btn btn-primary">
             Submit
